@@ -1,0 +1,26 @@
+{
+    "id": "734A67A0",
+    "path": "C:/Projects/TrafficRandomSimulator/config.R",
+    "project_path": "config.R",
+    "type": "r_source",
+    "hash": "3996433606",
+    "contents": "",
+    "dirty": false,
+    "created": 1792819629527.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "31,0",
+        "scrollLine": "10"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1792819631,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1792819631498,
+    "read_only": false,
+    "read_only_alternatives": []
+}

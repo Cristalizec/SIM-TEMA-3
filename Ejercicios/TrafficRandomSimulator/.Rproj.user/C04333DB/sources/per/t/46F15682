@@ -1,0 +1,26 @@
+{
+    "id": "46F15682",
+    "path": "C:/Projects/TrafficRandomSimulator/database/simulation_repository.R",
+    "project_path": "database/simulation_repository.R",
+    "type": "r_source",
+    "hash": "2705528233",
+    "contents": "",
+    "dirty": false,
+    "created": 1792819750376.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "292,0",
+        "scrollLine": "271"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1792819755,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1792819755936,
+    "read_only": false,
+    "read_only_alternatives": []
+}

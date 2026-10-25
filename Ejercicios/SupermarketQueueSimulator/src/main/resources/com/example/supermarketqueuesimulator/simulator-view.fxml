@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.supermarketqueuesimulator.controller.SimulatorController"
+        prefWidth="1150"
+        prefHeight="750"
+        style="-fx-background-color: #f4f6f9;">
+
+    <!-- HEADER -->
+    <top>
+        <VBox spacing="8"
+              style="-fx-background-color: #16324f;">
+
+            <padding>
+                <Insets top="20" right="25" bottom="20" left="25"/>
+            </padding>
+
+            <Label text="SUPERMARKET QUEUE SIMULATOR"
+                   style="-fx-font-size: 24px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+
+            <Label text="Simulación de filas mediante variables aleatorias"
+                   style="-fx-font-size: 13px;
+                          -fx-text-fill: #d5e3f0;"/>
+
+        </VBox>
+    </top>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <VBox spacing="18">
+
+            <padding>
+                <Insets top="20" right="25" bottom="20" left="25"/>
+            </padding>
+
+            <!-- SIMULATION SETTINGS -->
+            <VBox spacing="12"
+                  style="-fx-background-color: white;
+                         -fx-background-radius: 10;
+                         -fx-padding: 18;">
+
+                <Label text="Configuración de la simulación"
+                       style="-fx-font-size: 17px;
+                              -fx-font-weight: bold;"/>
+
+                <HBox spacing="15" alignment="BOTTOM_LEFT">
+
+                    <VBox spacing="5">
+                        <Label text="Número de clientes"/>
+                        <TextField fx:id="customersField"
+                                   prefWidth="130"
+                                   promptText="Ejemplo: 20"/>
+                    </VBox>
+
+                    <VBox spacing="5">
+                        <Label text="Número de cajeros"/>
+                        <TextField fx:id="cashiersField"
+                                   prefWidth="130"
+                                   promptText="Ejemplo: 2"/>
+                    </VBox>
+
+                    <VBox spacing="5">
+                        <Label text="Método de generación"/>
+                        <ComboBox fx:id="methodCombo"
+                                  prefWidth="210"/>
+                    </VBox>
+
+                    <Button text="Iniciar simulación"
+                            onAction="#handleRunSimulation"
+                            prefHeight="32"
+                            style="-fx-background-color: #177245;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-cursor: hand;"/>
+
+                </HBox>
+            </VBox>
+
+            <!-- STATISTICS -->
+            <HBox spacing="15">
+
+                <VBox spacing="8"
+                      HBox.hgrow="ALWAYS"
+                      maxWidth="Infinity"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 10;
+                             -fx-padding: 18;">
+
+                    <Label text="Tiempo promedio de espera"
+                           style="-fx-font-size: 13px;"/>
+
+                    <Label fx:id="averageWaitLabel"
+                           text="0.00 min"
+                           style="-fx-font-size: 23px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #1764a0;"/>
+                </VBox>
+
+                <VBox spacing="8"
+                      HBox.hgrow="ALWAYS"
+                      maxWidth="Infinity"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 10;
+                             -fx-padding: 18;">
+
+                    <Label text="Tiempo promedio de atención"
+                           style="-fx-font-size: 13px;"/>
+
+                    <Label fx:id="averageServiceLabel"
+                           text="0.00 min"
+                           style="-fx-font-size: 23px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #177245;"/>
+                </VBox>
+
+                <VBox spacing="8"
+                      HBox.hgrow="ALWAYS"
+                      maxWidth="Infinity"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 10;
+                             -fx-padding: 18;">
+
+                    <Label text="Tiempo total"
+                           style="-fx-font-size: 13px;"/>
+
+                    <Label fx:id="totalTimeLabel"
+                           text="0.00 min"
+                           style="-fx-font-size: 23px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #a96a12;"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- TABS -->
+            <TabPane tabClosingPolicy="UNAVAILABLE"
+                     VBox.vgrow="ALWAYS">
+
+                <tabs>
+
+                    <!-- CUSTOMER TABLE -->
+                    <Tab text="Clientes simulados">
+
+                        <TableView fx:id="customerTable">
+
+                            <columns>
+
+                                <TableColumn
+                                        fx:id="customerNumberColumn"
+                                        text="Cliente"
+                                        prefWidth="90"/>
+
+                                <TableColumn
+                                        fx:id="arrivalTimeColumn"
+                                        text="Llegada"
+                                        prefWidth="135"/>
+
+                                <TableColumn
+                                        fx:id="serviceTimeColumn"
+                                        text="Atención"
+                                        prefWidth="135"/>
+
+                                <TableColumn
+                                        fx:id="startTimeColumn"
+                                        text="Inicio"
+                                        prefWidth="135"/>
+
+                                <TableColumn
+                                        fx:id="waitTimeColumn"
+                                        text="Espera"
+                                        prefWidth="135"/>
+
+                                <TableColumn
+                                        fx:id="departureTimeColumn"
+                                        text="Salida"
+                                        prefWidth="135"/>
+
+                                <TableColumn
+                                        fx:id="cashierNumberColumn"
+                                        text="Cajero"
+                                        prefWidth="90"/>
+
+                            </columns>
+
+                        </TableView>
+
+                    </Tab>
+
+                    <!-- CHART -->
+                    <Tab text="Gráfica">
+
+                        <LineChart fx:id="waitingChart"
+                                   title="Tiempos por cliente"
+                                   animated="false"
+                                   createSymbols="false"
+                                   legendVisible="true">
+
+                            <xAxis>
+                                <NumberAxis label="Número de cliente"/>
+                            </xAxis>
+
+                            <yAxis>
+                                <NumberAxis label="Tiempo (minutos)"/>
+                            </yAxis>
+
+                        </LineChart>
+
+                    </Tab>
+
+                    <!-- DATABASE HISTORY -->
+                    <Tab text="Historial PostgreSQL">
+
+                        <VBox spacing="10">
+
+                            <padding>
+                                <Insets top="12"
+                                        right="12"
+                                        bottom="12"
+                                        left="12"/>
+                            </padding>
+
+                            <HBox spacing="10">
+
+                                <Button text="Actualizar historial"
+                                        onAction="#handleRefreshHistory"
+                                        style="-fx-background-color: #1764a0;
+                                               -fx-text-fill: white;"/>
+
+                                <Button text="Ver simulación"
+                                        onAction="#handleViewSimulation"
+                                        style="-fx-background-color: #177245;
+                                               -fx-text-fill: white;"/>
+
+                            </HBox>
+
+                            <TableView fx:id="historyTable"
+                                       VBox.vgrow="ALWAYS">
+
+                                <columns>
+
+                                    <TableColumn
+                                            fx:id="historyIdColumn"
+                                            text="ID"
+                                            prefWidth="70"/>
+
+                                    <TableColumn
+                                            fx:id="historyMethodColumn"
+                                            text="Método"
+                                            prefWidth="190"/>
+
+                                    <TableColumn
+                                            fx:id="historyCustomersColumn"
+                                            text="Clientes"
+                                            prefWidth="110"/>
+
+                                    <TableColumn
+                                            fx:id="historyCashiersColumn"
+                                            text="Cajeros"
+                                            prefWidth="100"/>
+
+                                    <TableColumn
+                                            fx:id="historyWaitColumn"
+                                            text="Espera promedio"
+                                            prefWidth="150"/>
+
+                                    <TableColumn
+                                            fx:id="historyDateColumn"
+                                            text="Fecha"
+                                            prefWidth="170"/>
+
+                                </columns>
+
+                            </TableView>
+
+                        </VBox>
+
+                    </Tab>
+
+                </tabs>
+
+            </TabPane>
+
+        </VBox>
+    </center>
+
+    <!-- STATUS BAR -->
+    <bottom>
+
+        <HBox alignment="CENTER_LEFT"
+              style="-fx-background-color: #e7edf3;
+                     -fx-padding: 12;">
+
+            <Label fx:id="statusLabel"
+                   text="Esperando conexión con PostgreSQL..."
+                   style="-fx-font-size: 12px;
+                          -fx-text-fill: #34495e;"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

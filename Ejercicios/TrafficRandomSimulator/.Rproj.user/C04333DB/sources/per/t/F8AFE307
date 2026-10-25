@@ -1,0 +1,26 @@
+{
+    "id": "F8AFE307",
+    "path": "C:/Projects/TrafficRandomSimulator/services/dataset_service.R",
+    "project_path": "services/dataset_service.R",
+    "type": "r_source",
+    "hash": "1904186556",
+    "contents": "",
+    "dirty": false,
+    "created": 1792818380498.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "254,2",
+        "scrollLine": "238"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1792818387,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1792818387976,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,26 @@
+{
+    "id": "4609F673",
+    "path": "C:/Projects/TrafficRandomSimulator/models/vehiculo.R",
+    "project_path": "models/vehiculo.R",
+    "type": "r_source",
+    "hash": "896818376",
+    "contents": "",
+    "dirty": false,
+    "created": 1792817860330.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "182,20",
+        "scrollLine": "171"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1792817871,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1792817871723,
+    "read_only": false,
+    "read_only_alternatives": []
+}

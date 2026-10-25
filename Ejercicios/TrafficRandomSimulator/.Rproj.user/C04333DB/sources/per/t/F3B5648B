@@ -1,0 +1,26 @@
+{
+    "id": "F3B5648B",
+    "path": "C:/Projects/TrafficRandomSimulator/views/dashboard.R",
+    "project_path": "views/dashboard.R",
+    "type": "r_source",
+    "hash": "2688313366",
+    "contents": "",
+    "dirty": false,
+    "created": 1792819791350.0,
+    "source_on_save": false,
+    "relative_order": 11,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "733,0",
+        "scrollLine": "712"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1792819799,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1792819799759,
+    "read_only": false,
+    "read_only_alternatives": []
+}

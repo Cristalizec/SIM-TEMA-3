@@ -1,0 +1,26 @@
+{
+    "id": "47F52990",
+    "path": "C:/Projects/TrafficRandomSimulator/database/init_db.R",
+    "project_path": "database/init_db.R",
+    "type": "r_source",
+    "hash": "1696608701",
+    "contents": "",
+    "dirty": false,
+    "created": 1792817563399.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "245,0",
+        "scrollLine": "224"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1792817570,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1792817570478,
+    "read_only": false,
+    "read_only_alternatives": []
+}

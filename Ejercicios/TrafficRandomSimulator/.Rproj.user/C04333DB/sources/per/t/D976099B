@@ -1,0 +1,26 @@
+{
+    "id": "D976099B",
+    "path": "C:/Projects/TrafficRandomSimulator/services/simulation_service.R",
+    "project_path": "services/simulation_service.R",
+    "type": "r_source",
+    "hash": "1477033119",
+    "contents": "",
+    "dirty": false,
+    "created": 1792819654227.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "309,0",
+        "scrollLine": "288"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1792819685,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1792819685768,
+    "read_only": false,
+    "read_only_alternatives": []
+}
